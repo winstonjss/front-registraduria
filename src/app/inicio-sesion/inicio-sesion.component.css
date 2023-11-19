@@ -1,0 +1,23 @@
+.login {
+  background: rgb(239, 239, 239);
+  background: linear-gradient(
+    234deg,
+    rgba(239, 239, 239, 1) 0%,
+    rgba(33, 53, 85, 1) 0%,
+    rgba(33, 53, 85, 1) 0%,
+    rgba(33, 53, 85, 0.9935483870967742) 0%,
+    rgba(239, 239, 239, 1) 0%,
+    rgba(85, 100, 124, 1) 100%
+  );
+  font-family: Monserrat;
+}
+
+.login-card {
+  background: #efefef;
+  color: black;
+}
+
+.login-btn {
+  background: #4d6d98;
+  color: white;
+}
