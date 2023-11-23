@@ -7,17 +7,22 @@ import { Candidatos } from '../candidatos/candidatos';
 import { ActivatedRoute, Router } from '@angular/router';
 import swal from 'sweetalert2';
 import { VotosService } from './votos.service';
-import { MatSelectModule } from '@angular/material/select';
 
 
 @Component({
   selector: 'app-registrar-votos',
   templateUrl: './registrar-votos.component.html',
-  styleUrls: ['./registrar-votos.component.css'],
+  styleUrls: ['./registrar-votos.component.css']
 })
 export class RegistrarVotosComponent {
 
-
+  opciones = [
+    { valor: 'opcion1', etiqueta: 'Nulo' },
+    { valor: 'opcion2', etiqueta: 'Blanco' },
+    { valor: 'opcion3', etiqueta: 'No Marcado' },
+    // Agrega más opciones según sea necesario
+  ];
+  opcionesSeleccionadas: string = '';
   candidatoForm: FormGroup;
   constructor(
     private fb: FormBuilder,
@@ -32,13 +37,10 @@ export class RegistrarVotosComponent {
       cantidadVotos: ''
     });
   }
-  onSelectionChanged(event: any) {
-   console.log(event.target.selectedOptions[0].text);
-}
-
 
   onFormSubmit() {
     if (this.candidatoForm.valid) {
+      console.log('Opciones seleccionadas:', this.opcionesSeleccionadas);
         this.canService.create(this.candidatoForm.value).subscribe({
           next: (val: any) => {
             this._coreService.openSnackBar('Candidato añadido satisfactoriamente');
