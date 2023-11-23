@@ -1,0 +1,28 @@
+<div mat-dialog-title>
+  <h1>Formulario Candidato</h1>
+</div>
+<form [formGroup]="candidatoForm">
+  <div mat-dialog-content class="content">
+      <div class="row">
+        <mat-form-field appearance="outline">
+        <select [(ngModel)]="candidatoForm" name="days" id="days" (change)="onSelectionChanged($event)">
+          <option value="0">Monday</option>
+          <option value="1">Tuesday</option>
+          <option value="2">Wednesday</option>
+      </select></mat-form-field>
+          <mat-form-field appearance="outline">
+              <mat-label>candidato</mat-label>
+              <input matInput type="text" placeholder="Ej. Luis" formControlName="candidato">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+              <mat-label>cantidadVotos</mat-label>
+              <input matInput placeholder="Ej. Marin" type="text" formControlName="cantidadVotos">
+          </mat-form-field>
+
+
+      </div>
+  </div>
+  <div mat-dialog-actions class="action">      
+      <button mat-raised-button color="primary" type="submit" (click)="onFormSubmit()">Guardar</button>
+  </div>
+</form>
