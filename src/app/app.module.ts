@@ -38,6 +38,7 @@ import { MesasComponent } from './mesas/mesas.component';
 import { MesasCreateEditComponent } from './mesas-create-edit/mesas-create-edit.component';
 import { RegistrarVotosComponent } from './registrar-votos/registrar-votos.component';
 import { MatSelectModule } from '@angular/material/select';
+import { ListarVotosComponent } from './listar-votos/listar-votos.component';
 
 
 const routes: Routes=[
@@ -47,6 +48,7 @@ const routes: Routes=[
   {path:'partidos',component:PartidosComponent},
   {path:'mesas',component:MesasComponent},
   {path:'votos',component:RegistrarVotosComponent},
+  {path:'listarvotos',component:ListarVotosComponent},
   {path:'', pathMatch: 'full', redirectTo: 'home'},
 ];
 
@@ -65,7 +67,8 @@ const routes: Routes=[
     FooterUserComponent,
     MesasComponent,
     MesasCreateEditComponent,
-    RegistrarVotosComponent
+    RegistrarVotosComponent,
+    ListarVotosComponent
   ],
   imports: [
     BrowserModule,

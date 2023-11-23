@@ -1,0 +1,55 @@
+<div class="container">
+    <mat-form-field>
+      <mat-label>Filtro</mat-label>
+      <input
+        matInput
+        (keyup)="applyFilter($event)"
+        placeholder="Ej. Luis"
+        #input
+      />
+    </mat-form-field>
+  
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" matSort>
+        <!-- Progress Column -->
+        <ng-container matColumnDef="claseVoto">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>claseVoto</th>
+          <td mat-cell *matCellDef="let row">{{ row.claseVoto }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="candidato">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>candidato</th>
+          <td mat-cell *matCellDef="let row">{{ row.candidato }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="partido">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>partido</th>
+          <td mat-cell *matCellDef="let row">{{ row.partido }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="cantidadVotos">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>cantidadVotos</th>
+          <td mat-cell *matCellDef="let row">{{ row.cantidadVotos }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">
+            No se encuentra "{{ input.value }}"
+          </td>
+        </tr>
+      </table>
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Select page of users"
+      ></mat-paginator>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col d-flex justify-content-center">
+      <a [routerLink]="['../inicio-sesion']" type="button" class="btn login-btn  btn-block mb-4">volver al inicio</a>                                                              
+    </div>
+  </div>
+  <app-footer-user></app-footer-user>

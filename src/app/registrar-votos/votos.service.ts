@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class VotosService {
 
-  private urlEndPoint: string = 'http://localhost:8080/consutar-voto';
+  private urlEndPoint: string = 'http://localhost:8080/consultar-voto';
 
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 

@@ -17,9 +17,10 @@ import { VotosService } from './votos.service';
 export class RegistrarVotosComponent {
 
   opciones = [
-    { valor: 'opcion1', etiqueta: 'Nulo' },
-    { valor: 'opcion2', etiqueta: 'Blanco' },
-    { valor: 'opcion3', etiqueta: 'No Marcado' },
+    { valor: '', etiqueta: '' },
+    { valor: 'Nulo', etiqueta: 'Nulo' },
+    { valor: 'Blanco', etiqueta: 'Blanco' },
+    { valor: 'No Marcado', etiqueta: 'No Marcado' },
     // Agrega más opciones según sea necesario
   ];
   opcionesSeleccionadas: string = '';
